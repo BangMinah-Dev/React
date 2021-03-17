@@ -9,46 +9,18 @@ function App() {
                 <div className="info">
                     <ul className="breadcrumb">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Shopping Cart</a></li>
+                        <li><a href="index.html">Shopping Cart</a></li>
                     </ul>
                     <div className="count">3 items in the bag</div>
                 </div>
             </header>
             <section>
-                <ul className="list">
-                    {/* <li className="row">
-                        <div className="leftBox">
-                            <div className="image">
-                                <a href="#">
-                                    <img src="https://via.placeholder.com/200x150" alt="image"></img>
-                                </a>
-                            </div>
-                            <div className="detail">
-                                <div className="name">
-                                    <a href="#">PRODUCT ITEM NUMBER 1</a>
-                                </div>
-                                <div className="des">
-                                    Description for product item number 1
-                                </div>
-                                <div className="price">$5.99</div>
-                            </div>
-                        </div>
-                        <div className="rightBox">
-                            <div className="quantity">
-                                <input type="number" class="quantity" step="1" value="1"></input>
-                            </div>
-                            <div className="del">
-                                <i className="fas fa-times"></i>
-                            </div>
-                        </div>
-                    </li> */}
-                    <Item></Item>
-                </ul>
+                <Item></Item>
             </section>
             <section>
                 <div className="bottom">
                     <div className="promotion">
-                        <label for="promo-code">Have A Promo Code ?</label>
+                        <label htmlFor="promo-code">Have A Promo Code ?</label>
                         <div className="input-group">
                             <input type="text" id="promo-code"></input>
                             <button type="button">
