@@ -1,15 +1,18 @@
-import React from "react"
 
 function Product() {
     const items = [
         {   
             "id" : "1",
+            "image" : "https://via.placeholder.com/200x150",
+            "alt" : "image_1",
             "name" : "PRODUCT ITEM NUMBER 1",
             "des" : "Description for product item number 1",
             "price" : "$5.99"
         },
         {
             "id" : "2",
+            "image" : "https://via.placeholder.com/200x150",
+            "alt" : "image_2",
             "name" : "PRODUCT ITEM NUMBER 2",
             "des" : "Description for product item number 2",
             "price" : "$9.99"
@@ -23,7 +26,7 @@ function Product() {
                     <div className="leftBox">
                         <div className="image">
                             <a href="index.html">
-                                <img src="https://via.placeholder.com/200x150" alt="image2"></img>
+                                <img src={item.image} alt={item.alt}></img>
                             </a>
                         </div>
                         <div className="detail">
