@@ -1,0 +1,293 @@
+/* CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 20px 0px;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #f58551;
+}
+
+.App {
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header{
+    padding: 0px 15px;
+    margin-bottom: 1.5rem;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    text-align: left;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " \276f";
+    padding-left: 8px;
+}
+
+.breadcrumb li {
+    padding: 0 8px;
+}
+
+.breadcrumb li:first-child{
+    padding: 0px !important;
+}
+
+section{
+    padding: 0px 15px;
+}
+
+ul.list{
+    border-top: 1px solid #DDD;
+}
+
+ul.list li{
+    padding: 1rem 0px;
+    border-bottom: 1px solid #DDD;
+}
+
+ul.list .row{
+    display: flex;
+}
+
+ul.list .row .leftBox{
+    width: 70%;
+    display: flex;
+}
+
+ul.list .row .leftBox .image{
+    width: 35%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+ul.list .row .leftBox .image img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+ul.list .row .leftBox .name{
+    font-size: 1.2rem;
+}
+
+ul.list .row .leftBox .detail{
+    width: 65%;
+    text-align: left;
+    line-height: 2.2rem;
+}
+
+ul.list .row .leftBox .des{
+    color: #7d7d7d;
+}
+
+ul.list .row .leftBox .price{
+    font-size: 1.5rem;
+}
+
+ul.list .row .rightBox{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+ul.list .row .rightBox .quantity{
+    width: 50%;
+    text-align: center;
+}
+
+.quantity > input {
+    display: inline-block;
+    width: 60px !important;
+    height: 60px;
+    position: relative;
+    left: calc(50% - 30px);
+    background: #fff;
+    border: 2px solid #ddd;
+    color: #7f7f7f;
+    /* text-align: center; */
+    font: 600 1.5rem Helvetica, Arial, sans-serif;
+}
+
+.quantity > input:hover, .quantity > input:focus {
+    border-color: #f58551;
+    outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+ul.list .row .rightBox .del{
+    width: 50%;
+    text-align: center;
+}
+
+ul.list .row .rightBox .fa-times{
+    font-size: 30px;
+    color: #7d7d7d;
+}
+
+ul.list .row .rightBox .fa-times:hover{
+    font-size: 30px;
+    color: #f58551;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom .promotion{
+    width: 50%;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.bottom .promotion input{
+    width: 80%;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0 0.5rem 1.8rem;
+    border: 2px solid #16cc9b;
+    border-radius: 2rem 0 0 2rem;
+    outline: none;
+}
+
+.bottom .promotion button{
+    width: 20%;
+    height: 2.38rem;
+    border-radius: 0 2rem 2rem 0;
+    background-color: #16cc9b;
+    border: 2px solid #16cc9b;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.bottom .input-group:hover > input {
+    border-color: #f58551;
+}
+
+.bottom .input-group:hover > button {
+    border-color: #f58551;
+    background-color: #f58551;
+}
+
+.bottom .summary{
+    width: 50%;
+    text-align: right;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.bottom .summary ul li {
+    padding: 0.5rem 0;
+}
+
+.bottom .summary ul li:last-child{
+    font-weight: bold;
+}
+
+.bottom .summary ul li span{
+    display: inline-block;
+    width: 30%;
+}
+
+.checkout{
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+.checkout > button {
+    font-size: 1.2rem;
+    padding: 0.8rem 2.8rem;
+    border-radius: 1.5rem;
+}
+
+button {
+    background-color: #16cc9b;
+    border: 2px solid #16cc9b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    border-color: #f58551;
+    background-color: #f58551;
+}
+
+/*
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+ @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
