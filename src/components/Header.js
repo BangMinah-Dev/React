@@ -1,17 +1,32 @@
+import Data from "../data/Data.js";
+import { useState } from "react";
 
-function Header(){
-    return(
-        <header>
-            <h1 className="title">Shopping Cart</h1>
-            <div className="info">
-                <ul className="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html">Shopping Cart</a></li>
-                </ul>
-                <div className="count">3 items in the bag</div>
-            </div>
-        </header>
-    )
+function total() {
+    let soSanPham = Data.reduce((total, product) => total + product.quantity, 0)
+    // const [totalItems, setTotalItems] = useState(soSanPham);
+    return soSanPham
 }
 
-export default Header
+function Header() {
+    // const numberItems = props._data;
+    // console.log(numberItems);
+    // let sum = 0
+    // for(let i = 0; i < numberItems.length; i++){
+    //     sum += numberItems[i].quantity
+    // }
+
+    return (
+        <header className="container">
+            <h1>Shopping Cart</h1>
+
+            <ul className="breadcrumb">
+                <li>Home</li>
+                <li>Shopping Cart</li>
+            </ul>
+
+            <span className="count">{total()} items in the bag</span>
+        </header>
+    );
+}
+
+export { Header, total };

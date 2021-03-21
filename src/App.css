@@ -1,293 +1,356 @@
-/* CSS */
-*{
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
-}
-
-body{
-    margin: 20px 0px;
-}
-
-a{
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover{
-    color: #f58551;
-}
-
-.App {
-    text-align: center;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-header{
-    padding: 0px 15px;
-    margin-bottom: 1.5rem;
-}
-
-.info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-}
-
-.breadcrumb {
-    display: flex;
-    justify-content: space-between;
-}
-
-.title {
-    text-align: left;
-}
-
-ul{
-    list-style-type: none;
+  }
+  
+  html {
+    font-size: 12px;
+  }
+  
+  body {
+    margin: 20px 0;
     padding: 0;
-}
-
-.breadcrumb li:not(:last-child)::after {
+    font-family: arial, sans-serif;
+    overflow: scroll;
+  }
+  
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+    border-radius: 4px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333333;
+  }
+  
+  a:hover {
+    color: #f58551;
+  }
+  
+  button {
+    background-color: #16cc9b;
+    border: 2px solid #16cc9b;
+    color: #ffffff;
+    transition: all 0.25s linear;
+    cursor: pointer;
+  }
+  
+  button::after {
+    position: relative;
+    right: 0;
+    content: " \276f";
+    transition: all 0.15s linear;
+  }
+  
+  button:hover {
+    background-color: #f58551;
+    border-color: #f58551;
+  }
+  
+  button:hover::after {
+    right: -5px;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  input {
+    transition: all 0.25s linear;
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  input {
+    outline: none;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  
+  /* --- HEADER --- */
+  header.container {
+    margin-bottom: 1.5rem;
+  }
+  
+  header .breadcrumb {
+    color: #7d7d7d;
+  }
+  
+  header .breadcrumb li {
+    float: left;
+    padding: 0 6px;
+    height: 20px;
+    line-height: 20px;
+  }
+  
+  header .breadcrumb li:first-child {
+    padding-left: 2px;
+  }
+  
+  header .breadcrumb li:not(:last-child)::after {
     content: " \276f";
     padding-left: 8px;
-}
-
-.breadcrumb li {
-    padding: 0 8px;
-}
-
-.breadcrumb li:first-child{
-    padding: 0px !important;
-}
-
-section{
-    padding: 0px 15px;
-}
-
-ul.list{
-    border-top: 1px solid #DDD;
-}
-
-ul.list li{
-    padding: 1rem 0px;
-    border-bottom: 1px solid #DDD;
-}
-
-ul.list .row{
-    display: flex;
-}
-
-ul.list .row .leftBox{
-    width: 70%;
-    display: flex;
-}
-
-ul.list .row .leftBox .image{
-    width: 35%;
-    overflow: hidden;
-    margin-right: 15px;
-}
-
-ul.list .row .leftBox .image img{
+  }
+  
+  header .count {
+    float: right;
+    color: #333333;
+    height: 20px;
+    line-height: 20px;
+  }
+  
+  /* --- PRODUCT LIST --- */
+  .products {
+    border-top: 1px solid #ddd;
+  }
+  
+  .products > li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .row {
+    position: relative;
+    overflow: auto;
     width: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    vertical-align: middle;
-}
-
-ul.list .row .leftBox .name{
-    font-size: 1.2rem;
-}
-
-ul.list .row .leftBox .detail{
-    width: 65%;
-    text-align: left;
-    line-height: 2.2rem;
-}
-
-ul.list .row .leftBox .des{
-    color: #7d7d7d;
-}
-
-ul.list .row .leftBox .price{
-    font-size: 1.5rem;
-}
-
-ul.list .row .rightBox{
+  }
+  
+  .col,
+  .quantity,
+  .remove {
+    float: left;
+  }
+  
+  .col.left {
+    width: 70%;
+  }
+  
+  .col.right {
     width: 30%;
-    display: flex;
-    align-items: center;
-}
-
-ul.list .row .rightBox .quantity{
+    position: absolute;
+    right: 0;
+    top: calc(50% - 30px);
+  }
+  
+  .detail {
+    padding: 0 0.5rem;
+    line-height: 2.2rem;
+  }
+  
+  .detail .name {
+    font-size: 1.2rem;
+  }
+  
+  .detail .description {
+    color: #7d7d7d;
+    font-size: 1rem;
+  }
+  
+  .detail .price {
+    font-size: 1.5rem;
+  }
+  
+  .quantity,
+  .remove {
     width: 50%;
     text-align: center;
-}
-
-.quantity > input {
+  }
+  
+  .remove svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .quantity > input {
     display: inline-block;
-    width: 60px !important;
+    width: 60px;
     height: 60px;
     position: relative;
     left: calc(50% - 30px);
     background: #fff;
     border: 2px solid #ddd;
     color: #7f7f7f;
-    /* text-align: center; */
-    font: 600 1.5rem Helvetica, Arial, sans-serif;
-}
-
-.quantity > input:hover, .quantity > input:focus {
-    border-color: #f58551;
-    outline: none;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-
-ul.list .row .rightBox .del{
-    width: 50%;
     text-align: center;
-}
-
-ul.list .row .rightBox .fa-times{
-    font-size: 30px;
-    color: #7d7d7d;
-}
-
-ul.list .row .rightBox .fa-times:hover{
-    font-size: 30px;
-    color: #f58551;
-}
-
-.bottom{
-    display: flex;
-    justify-content: space-between;
-}
-
-.bottom .promotion{
-    width: 50%;
-    text-align: left;
+    font: 600 1.5rem Helvetica, Arial, sans-serif;
+  }
+  
+  .quantity > input:hover,
+  .quantity > input:focus {
+    border-color: #f58551;
+  }
+  
+  .close {
+    fill: #7d7d7d;
+    transition: color 150ms linear, background-color 150ms linear,
+      fill 150ms linear, 150ms opacity linear;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    fill: #f58551;
+  }
+  
+  /* --- SUMMARY --- */
+  .promotion,
+  .summary,
+  .checkout {
+    float: left;
+    width: 100%;
     margin-top: 1.5rem;
-}
-
-.bottom .promotion input{
+  }
+  
+  .promotion > label {
+    float: left;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .promotion > input {
+    float: left;
     width: 80%;
     font-size: 1rem;
-    margin-top: 1rem;
     padding: 0.5rem 0 0.5rem 1.8rem;
     border: 2px solid #16cc9b;
     border-radius: 2rem 0 0 2rem;
-    outline: none;
-}
-
-.bottom .promotion button{
-    width: 20%;
-    height: 2.38rem;
-    border-radius: 0 2rem 2rem 0;
-    background-color: #16cc9b;
-    border: 2px solid #16cc9b;
-    color: #ffffff;
-    outline: none;
-    cursor: pointer;
-}
-
-.bottom .input-group:hover > input {
+  }
+  
+  .promotion:hover > input {
     border-color: #f58551;
-}
-
-.bottom .input-group:hover > button {
+  }
+  
+  .promotion > button {
+    float: left;
+    width: 20%;
+    height: 2.4rem;
+    border-radius: 0 2rem 2rem 0;
+  }
+  
+  .promotion:hover > button {
     border-color: #f58551;
     background-color: #f58551;
-}
-
-.bottom .summary{
-    width: 50%;
-    text-align: right;
-    margin-top: 1.5rem;
+  }
+  
+  .promotion > button::after {
+    content: "\276f";
+    font-size: 1rem;
+  }
+  
+  .summary {
     font-size: 1.2rem;
-}
-
-.bottom .summary ul li {
+    text-align: right;
+  }
+  
+  .summary ul li {
     padding: 0.5rem 0;
-}
-
-.bottom .summary ul li:last-child{
-    font-weight: bold;
-}
-
-.bottom .summary ul li span{
+  }
+  
+  .summary ul li span {
     display: inline-block;
     width: 30%;
-}
-
-.checkout{
+  }
+  
+  .summary ul li.total {
+    font-weight: bold;
+  }
+  
+  .checkout {
     text-align: right;
-    margin-top: 1.5rem;
-}
-
-.checkout > button {
+  }
+  
+  .checkout > button {
     font-size: 1.2rem;
     padding: 0.8rem 2.8rem;
     border-radius: 1.5rem;
-}
-
-button {
-    background-color: #16cc9b;
-    border: 2px solid #16cc9b;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-button:hover {
-    border-color: #f58551;
-    background-color: #f58551;
-}
-
-/*
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
- @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .empty-product {
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .empty-product > button {
+    font-size: 1.3rem;
+    padding: 10px 30px;
+    border-radius: 5px;
   }
-} */
+  
+  /* --- SMALL SCREEN --- */
+  @media all and (max-width: 599px) {
+    .thumbnail img {
+      display: none;
+    }
+  
+    .quantity > input {
+      width: 40px;
+      height: 40px;
+      left: calc(50% - 20px);
+    }
+  
+    .remove svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* --- MEDIUM & LARGE SCREEN --- */
+  @media all and (min-width: 600px) {
+    html {
+      font-size: 14px;
+    }
+  
+    .container {
+      width: 75%;
+      max-width: 960px;
+    }
+  
+    .thumbnail,
+    .detail {
+      float: left;
+    }
+  
+    .thumbnail {
+      width: 35%;
+    }
+  
+    .detail {
+      width: 65%;
+    }
+  
+    .promotion,
+    .summary {
+      width: 50%;
+    }
+  
+    .checkout {
+      width: 100%;
+    }
+  
+    .checkout,
+    .summary {
+      text-align: right;
+    }
+  }
+  
+  /* --- LARGE SCREEN --- */
+  @media all and (min-width: 992px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  

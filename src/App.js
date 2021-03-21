@@ -1,39 +1,47 @@
 import "./App.css";
-import Header from "./components/Header"
-import Item from "./components/Product.js"
-import PromoCode from "./components/PromoCode.js"
+import {Header, total} from "./components/Header.js";
+import Product from "./components/Product.js";
+import Data from "./data/Data.js"
 
 function App() {
     return (
+        
         <div className="App">
-            <Header></Header>
-            <section>
-                <Item></Item>
-            </section>
-            <section>
-                <div className="bottom">
-                    <PromoCode></PromoCode>
+            <main>
+                <Header></Header>
+
+                <section className="container">
+                    <ul className="products">
+                        <Product _data={Data}></Product>
+                    </ul>
+                </section>
+
+                <section className="container">
+                    <div className="promotion">
+                        <label htmlFor="promo-code">Have A Promo Code?</label>
+                        <input type="text" id="promo-code" />
+                        <button type="button"></button>
+                    </div>
+
                     <div className="summary">
                         <ul>
                             <li>
-                                Subtotal
-                                <span>$21.97</span>
+                                Subtotal <span>$21.97</span>
                             </li>
                             <li>
-                                Tax
-                                <span>$5.00</span>
+                                Tax <span>$5.00</span>
                             </li>
-                            <li>
-                                Total
-                                <span>$26.97</span>
+                            <li className="total">
+                                Total <span>$26.97</span>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div className="checkout">
-                    <button type="button">Check Out <i className="fas fa-angle-right"></i></button>
-                </div>
-            </section>
+
+                    <div className="checkout">
+                        <button type="button">Check Out</button>
+                    </div>
+                </section>
+            </main>
         </div>
     );
 }
