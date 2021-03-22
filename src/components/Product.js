@@ -1,14 +1,14 @@
-import {useState} from "react"
+
 
 function Product(props) {
-    const product = props._data;
+    const products = props.data;
 
-    const productList = product.map((product) => (
+    const productList = products.map((product) => (
         <li className="row" key={product.id}>
             <div className="col left">
                 <div className="thumbnail">
                     <a href="/">
-                        <img src="https://via.placeholder.com/200x150" alt="" />
+                        <img src={product.image} alt={"Ảnh sản phẩm " + product.name} />
                     </a>
                 </div>
                 <div className="detail">
@@ -27,7 +27,7 @@ function Product(props) {
                     <input
                         type="number"
                         className="quantity"
-                        step="1"
+                        step={1}
                         defaultValue={product.quantity}
                     />
                 </div>
@@ -43,6 +43,7 @@ function Product(props) {
                         viewBox="0 0 60 60"
                         enableBackground="new 0 0 60 60"
                         xmlSpace="preserve"
+                        onClick={ () => props.action(product.id)}
                     >
                         <polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812 22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812"></polygon>
                     </svg>

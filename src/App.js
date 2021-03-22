@@ -1,18 +1,46 @@
 import "./App.css";
-import {Header, total} from "./components/Header.js";
+import { useState } from "react";
+import Header from "./components/Header.js";
 import Product from "./components/Product.js";
-import Data from "./data/Data.js"
+import Data from "./Data.js"
+
 
 function App() {
+    // Lấy tổng giá tiền ban đầu trong mảng
+    function Subtotal(){
+        const subtotal = Data.reduce((total, product) => total + product.price, 0)
+        return subtotal
+    } 
+
+    const [price, setPrice] = useState(Subtotal())
+
+    // Lấy số lượng sản phẩm ban đầu trong mảng
+    function numberItems(){
+        const numberItems = Data.reduce((total, product) => total + product.quantity, 0)
+        return numberItems
+    }
+
+    // Dùng state để cập nhật lại giao diện
+    const [totalItems, setTotalItems] = useState(numberItems)
+
+    const [products, setProducts] = useState(Data)
+
+    function removeItem(id){
+        setProducts( () => products.filter( product => product.id !== id) ) 
+
+        setTotalItems( () => products.filter( product => product.id !== id ).reduce((total, product) => total + product.quantity, 0) ) 
+
+        setPrice( () => products.filter( product => product.id !== id ).reduce((total, product) => total + product.price, 0) )
+    }
+
     return (
-        
         <div className="App">
             <main>
-                <Header></Header>
+                <Header totalItems={totalItems}></Header>
 
                 <section className="container">
                     <ul className="products">
-                        <Product _data={Data}></Product>
+                        <Product data={products} action={removeItem}></Product>
                     </ul>
                 </section>
 
@@ -26,13 +54,13 @@ function App() {
                     <div className="summary">
                         <ul>
                             <li>
-                                Subtotal <span>$21.97</span>
+                                Subtotal <span>$ {price.toFixed(2)}</span>
                             </li>
                             <li>
-                                Tax <span>$5.00</span>
+                                Tax <span>$ 5.00</span>
                             </li>
                             <li className="total">
-                                Total <span>$26.97</span>
+                                Total <span>$ {price !== 0 ? (price + 5.00).toFixed(2) : 0}</span>
                             </li>
                         </ul>
                     </div>

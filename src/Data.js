@@ -5,7 +5,7 @@ function Data() {
             name: "PRODUCT ITEM NUMBER 1",
             description: "Description for product item number 1",
             image: "https://via.placeholder.com/200x150",
-            price: 10,
+            price: 10.111,
             quantity: 1,
         },
         {
@@ -13,7 +13,7 @@ function Data() {
             name: "PRODUCT ITEM NUMBER 2",
             description: "Description for product item number 2",
             image: "https://via.placeholder.com/200x150",
-            price: 20,
+            price: 20.224,
             quantity: 2,
         },
         {
@@ -21,11 +21,11 @@ function Data() {
             name: "PRODUCT ITEM NUMBER 3",
             description: "Description for product item number 3",
             image: "https://via.placeholder.com/200x150",
-            price: 10,
+            price: 30.331,
             quantity: 3,
         },
     ];
     return PRODUCTS
 }
 
-export default Data()
+export default Data();
