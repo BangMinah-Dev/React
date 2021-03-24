@@ -289,6 +289,25 @@
     padding: 10px 30px;
     border-radius: 5px;
   }
+
+  .noProduct{
+    text-align: center;
+  }
+
+  .noProduct .btn{
+    color: #16cc9b;
+    cursor: pointer;
+    transition: all 0.25s linear;
+  }
+
+  .noProduct .btn:hover{
+    color: #0f8f6c;
+  }
+
+  .promotion p{
+    padding-left: 30px;
+    line-height: 40px;
+  }
   
   /* --- SMALL SCREEN --- */
   @media all and (max-width: 599px) {
