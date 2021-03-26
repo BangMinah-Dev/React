@@ -4,7 +4,7 @@ export const PRODUCTS = [
         name: "PRODUCT ITEM NUMBER 1",
         description: "Description for product item number 1",
         image: "https://via.placeholder.com/200x150",
-        price: 10.111,
+        price: 10000,
         quantity: 1,
     },
     {
@@ -12,7 +12,7 @@ export const PRODUCTS = [
         name: "PRODUCT ITEM NUMBER 2",
         description: "Description for product item number 2",
         image: "https://via.placeholder.com/200x150",
-        price: 20.224,
+        price: 20000,
         quantity: 5,
     },
     {
@@ -20,7 +20,7 @@ export const PRODUCTS = [
         name: "PRODUCT ITEM NUMBER 3",
         description: "Description for product item number 3",
         image: "https://via.placeholder.com/200x150",
-        price: 30.331,
+        price: 30000,
         quantity: 3,
     },
 ];

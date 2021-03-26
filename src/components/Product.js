@@ -16,7 +16,7 @@ function Product(props) {
                         <a href="/">{product.name}</a>
                     </div>
                     <div className="description">{product.description}</div>
-                    <div className="price">$ {product.price}</div>
+                    <div className="price">{(product.price).toLocaleString()} đ</div>
                 </div>
             </div>
             <div className="col right">

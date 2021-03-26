@@ -343,6 +343,10 @@
     margin: 30px;
   }
 
+  .modal span{
+    color: red;
+  }
+
   .modal button::after{
     content: "";
   }

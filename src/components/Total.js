@@ -10,16 +10,16 @@ function Total(props) {
                         <div className="summary">
                             <ul>
                                 <li>
-                                    Subtotal <span>$ {props.subTotal.toFixed(2)}</span>
+                                    Subtotal <span>{(props.subTotal).toLocaleString()} đ</span>
                                 </li>
                                 <li>
-                                    Tax <span>$ {(props.subTotal * 10 / 100).toFixed(2)}</span>
+                                    Tax <span>{(props.subTotal * 10 / 100).toLocaleString()} đ</span>
                                 </li>
                                 <li>Discount(%) <span>{props.discount}</span></li>
                                 <li className="total">
                                     Total{" "}
                                     <span>
-                                        $ {(props.subTotal - ((props.subTotal * props.discount / 100) + (props.subTotal * 10 / 100)).toFixed(2)).toLocaleString()}
+                                        {(props.subTotal - (props.subTotal * props.discount / 100) + (props.subTotal * 10 / 100)).toLocaleString()} đ
                                     </span>
                                 </li>
                             </ul>
